@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>        
+        <title>Lista rezerwacji</title>               
+    </head>
+    
+    <body>
+        
+        
+        <div class="container">                
+            <h4>   <strong th:text="${header}"/>  </h4>      
+                        
+        </div>
+           
+
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table table-bordered">          
+                    <thead>
+                        <tr  class="active">
+                            <th>tytul</th>
+                            <th>Data seansu</th>  
+                            <th>godzina</th>  
+                            <th>sala</th>
+                            <th>Imię</th>  
+                            <th>Nazwisko</th>  
+                            <th>email</th>
+                              
+                        </tr>
+                        
+                    </thead>
+                    <tbody>                       
+                        <tr th:each ="rezerwacja : ${rezerwacjaList}">               
+                            
+                            <td> <b  th:utext="${rezerwacja.tytul}">...</b> </td>
+                            <td> <b  th:utext="${rezerwacja.dataseansu}">...</b> </td>
+                            <td> <b  th:utext="${rezerwacja.godzina}">...</b> </td>
+                            <td> <b  th:utext="${rezerwacja.sala}">...</b> </td>
+                            <td> <b  th:utext="${rezerwacja.imie}">...</b> </td>
+                            <td> <b  th:utext="${rezerwacja.nazwisko}">...</b> </td>
+                            <td> <b  th:utext="${rezerwacja.email}">...</b> </td>
+                            
+                            
+                        </tr>
+                    </tbody>          
+                </table>    
+            </div>
+            
+            <a href="/index.html">Strona główna </a> 
+            
+        </div>
+
+
+    </body>
+</html>
+
